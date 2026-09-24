@@ -13,5 +13,5 @@ public interface IRepositoryRepository extends JpaRepository<Repository, Long> {
     //cuyo docente titular del Classroom tenga un correo institucional específico y cuya fecha
     //límite de entrega (deadline) sea posterior a una fecha dada
 
-    List<Repository> findDistinctByIsTemplateFalseAndAssignment_Classroom_Teacher_EmailAndAssignment_Deadline(String email, Timestamp tiempo);
+    List<Repository> findDistinctByIsTemplateFalseAndAssignment_Classroom_Teacher_EmailAndAssignment_DeadlineAfter(String email, Timestamp tiempo);
 }

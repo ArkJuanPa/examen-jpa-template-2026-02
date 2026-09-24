@@ -22,6 +22,6 @@ public class RepositoryController {
     @GetMapping("/eje2")
     public List<Repository> eje2() {
 
-        return repositoryRepository.findDistinctByIsTemplateFalseAndAssignment_Classroom_Teacher_EmailAndAssignment_Deadline("krodriguez@icesi.edu.co" , Timestamp.valueOf("2026-03-15 00:00:00"));
+        return repositoryRepository.findDistinctByIsTemplateFalseAndAssignment_Classroom_Teacher_EmailAndAssignment_DeadlineAfter("krodriguez@icesi.edu.co" , Timestamp.valueOf("2026-03-15 00:00:00"));
     }
 }
