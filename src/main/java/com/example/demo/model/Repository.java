@@ -32,6 +32,7 @@ public class Repository {
     @JoinColumn(name = "assignment_id", nullable = false)
     private Assignment assignment;
 
+
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id", nullable = false)
@@ -39,8 +40,9 @@ public class Repository {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "parent_repo_id", nullable = false)
+    @JoinColumn(name = "parent_repo_id")
     private Repository repository;
+
 
 
     @JsonIgnore
@@ -52,5 +54,10 @@ public class Repository {
     @ToString.Exclude
     @OneToMany(mappedBy = "repository", cascade = CascadeType.ALL)
     private List<PullRequest> requests;
+
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToMany(mappedBy = "repository", cascade = CascadeType.ALL)
+    private List<Repository> repositories;
 
 }

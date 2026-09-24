@@ -33,7 +33,7 @@ public class Commit {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "repository_id", nullable = false)
+    @JoinColumn(name = "repository_id")
     private Repository repository;
 
     @JsonIgnore
